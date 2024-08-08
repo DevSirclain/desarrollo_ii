@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .product {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+        }
+        .cart {
+            position: absolute;
+            top: 100px;
+            right: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4">Catálogo de Productos</h1>
+        <div class="row" id="product-list">
+            <!-- Productos aquí -->
+        </div>
+    </div>
+
+    <div class="cart" id="cart">
+        <h4>Carrito de Compras</h4>
+        <ul id="cart-items">
+            <!-- Items del carrito aquí -->
+        </ul>
+        <button class="btn btn-primary" onclick="checkout()">Pagar</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        const cart = [];
+
+        $(document).ready(function() {
+            $.ajax({
+                url: 'https://fakestoreapi.com/products',
+                method: 'GET',
+                success: function(products) {
+                    const productList = $('#product-list');
+                    products.forEach(product => {
+                        const productElement = $(`
+                            <div class="col-md-4">
+                                <div class="product">
+                                    <img src="${product.image}" alt="${product.id}"  width="304" height="236" >
+                                    <h5>${product.title}</h5>
+                                    <p>Precio: $${product.price}</p>
+                                    <button class="btn btn-success" onclick="addToCart(${product.id})">Agregar al Carrito</button>
+                                </div>
+                            </div>
+                        `);
+                        productList.append(productElement);
+                    });
+                }
+            });
+        });
+
+        function addToCart(productId) {
+            $.ajax({
+                url: `https://fakestoreapi.com/products/${productId}`,
+                method: 'GET',
+                success: function(product) {
+                    cart.push(product);
+                    const cartItems = $('#cart-items');
+                    const cartItem = $(`<li>${product.title} - $${product.price}</li>`);
+                    cartItems.append(cartItem);
+                }
+            });
+        }
+
+        function checkout() {
+            alert('Pagar funcionalidad en desarrollo...');
+        }
+    </script>
+</body>
+</html>
