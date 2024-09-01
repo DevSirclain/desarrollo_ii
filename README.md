@@ -10,6 +10,15 @@ Repositorio Perteneciente a Rodrigo Soto con Tareas de la Asignatura Desarrollo 
     - JavaScript
     - Bootstrap
     
+## Actividad Evaluativa M2 (EPE2)
+- **API creada en SpringBoot
+	- Java 1.7
+	- Maven
+- **BackEnd Desarrollado con NodeJs
+	- NodeJs v20
+- **FrontEnd Desarrollado con React
+	- Tamplate Utilizado AdminLTE.
+	
 
 
 
