@@ -11,14 +11,21 @@ Repositorio Perteneciente a Rodrigo Soto con Tareas de la Asignatura Desarrollo 
     - Bootstrap
     
 ## Actividad Evaluativa M2 (EPE2)
-- **API creada en SpringBoot
+- **API creada en SpringBoot**
 	- Java 1.7
 	- Maven
-- **BackEnd Desarrollado con NodeJs
+- **BackEnd Desarrollado con NodeJs**
 	- NodeJs v20
-- **FrontEnd Desarrollado con React
+- **FrontEnd Desarrollado con React**
 	- Tamplate Utilizado AdminLTE.
 	
 
-
+## Actividad Evaluativa M3 (EPE3)
+- **API creada en SpringBoot**
+	- Java 1.7
+	- Maven
+- **Tecnologias o lenguajes Utilizados en FrontEnd**
+	- HTML
+    - Bootstrap
+    - JavaScript [Utilizado como Backend para comunicar el front con la API].
 
